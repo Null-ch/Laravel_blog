@@ -1,66 +1,69 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# ОПИСАНИЕ ПРОЕКТА
 
-## About Laravel
+В данном проекте реализуется создание блога с админ панелью на Laravel.
+Данные хранятся в подключенной БД MySQL
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# КЛЮЧЕВЫЕ ФАЙЛЫ ПРОЕКТА
+С чем работал в процессе создания проекта:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Маршрутизация;
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Контроллеры;
 
-## Learning Laravel
+Валидция;
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Миграции;
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Шаблоны view, layouts, sidebar;
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Создание и связанных моделей;
 
-## Laravel Sponsors
+Файлы ресурсов;
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+# ИНСТАЛЯЦИЯ
 
-### Premium Partners
+Склонируйте проект в директорию с сервером:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+`git clone https://git@github.com:Null-ch/Laravel_blog.git`
 
-## Contributing
+Затем, открыв из папки проекта консоль, введите команду для установки пакетов ларавель:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+`composer install`
 
-## Code of Conduct
+Создайте базу данных на сервере и заполните поля файла .env, находящийся в папке проекта по примеру:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+`DB_CONNECTION=mysql`
 
-## Security Vulnerabilities
+`DB_HOST=127.0.0.1`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+`DB_PORT=3306`
 
-## License
+`DB_DATABASE=laravelBlog`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+`DB_USERNAME=root`
+
+`DB_PASSWORD=`
+
+В открытой консоли директории проекта введите команду для генерации таблиц базы данных:
+
+`php artisan migrate`
+
+В той же консоли для запуска сайта по адресу `http://localhost:8000` введите команду:
+
+`php artisan serve`
+
+В новой консоли для запуска NodeJS и корректной работы введите команду:
+
+`npm run dev`
+
+Откройте сайт в браузере по адресу  `http://localhost:8000`
+## About
+<details> 
+<summary> Обзор текущего наполнения </summary>
+<h4 align="center">Основная страница</h4>
+<img src="https://github.com/Null-ch/Laravel_blog/assets/65172872/f41bd9a7-be92-4df6-b501-fe4fbfe259ce">
+Демонстрация рабочего CRUD (теги)
+<img src="https://github.com/Null-ch/Laravel_blog/assets/65172872/5a35f014-8fd4-4f0f-b128-25c01d891476">
+</details> 
