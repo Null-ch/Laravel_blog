@@ -45,14 +45,12 @@
                                     <tbody>
                                         <tr>
                                             <td>ID</td>
-                                            <td>{{ $post->id }}</td>
-                                        </tr>
-                                        <tr>
                                             <td>Название</td>
-                                            <td>{{ $post->title }}</td>
+                                            <td>Содержимое поста</td>
                                         </tr>
                                         <tr>
-                                            <td>Содержимое поста</td>
+                                            <td>{{ $post->id }}</td>
+                                            <td>{{ $post->title }}</td>
                                             <td>{{ $post->content }}</td>
                                         </tr>
                                     </tbody>

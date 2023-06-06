@@ -22,14 +22,23 @@
                 <div class="row">
                     <div class="col-12">
                         <h3>Редактирование данных о пользователе</h3>
-                        <form action="{{route('admin.user.update', $user->id)}}" method="POST" class="w-25">
+                        <form action="{{ route('admin.user.update', $user->id) }}" method="POST" class="w-25">
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
-                                <label>Название</label>
-                                <input type="text" class="form-control" name="name" placeholder="Название категории" value="{{$user->name}}">
+                                <label>Имя пользователя</label>
+                                <input type="text" class="form-control" name="name" placeholder="Олег"
+                                    value="{{ $user->name }}">
                                 @error('name')
-                             <div class="text-danger"> Это поле необходимо для заполнения</div>
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" class="form-control" name="email" placeholder="qwerty@yandex.ru"
+                                    value="{{ $user->email }}">
+                                @error('email')
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <input type="submit" class="btn btn-primary mt-2" value="Обновить">
@@ -37,7 +46,7 @@
                     </div>
                 </div>
             </div>
-    </section>
+        </section>
     </div>
     </div><!-- /.container-fluid -->
     </section>

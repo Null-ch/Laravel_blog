@@ -22,13 +22,27 @@
                 <div class="row">
                     <div class="col-12">
                         <h3>Добавление пользователя</h3>
-                        <form action="{{route('admin.user.store')}}" method="POST" class="w-25">
+                        <form action="{{ route('admin.user.store') }}" method="POST" class="w-25">
                             @csrf
                             <div class="form-group">
-                                <label>Название</label>
-                                <input type="text" class="form-control" name="name" placeholder="Название категории">
+                                <label>Имя пользователя</label>
+                                <input type="text" class="form-control" name="name" placeholder="Олег">
                                 @error('name')
-                             <div class="text-danger"> Это поле необходимо для заполнения</div>
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" class="form-control" name="email" placeholder="qwerty@yandex.ru">
+                                @error('email')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Пароль</label>
+                                <input type="text" class="form-control" name="password" placeholder="Введите пароль">
+                                @error('password')
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <input type="submit" class="btn btn-primary mt-2" value="Добавить">
@@ -36,7 +50,7 @@
                     </div>
                 </div>
             </div>
-    </section>
+        </section>
     </div>
     </div><!-- /.container-fluid -->
     </section>

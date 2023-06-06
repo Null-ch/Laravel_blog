@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin\User;
 
 use App\Models\User;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Category\UpdateRequest;
+use App\Http\Requests\Admin\User\UpdateRequest;
+
 
 class UpdateController extends Controller
 {

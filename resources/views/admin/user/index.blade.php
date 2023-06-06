@@ -22,7 +22,7 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-1 mb-3">
-                        <a href="{{ route('admin.category.create') }}" class="btn btn-block btn-primary mb 3">Добавить </a>
+                        <a href="{{ route('admin.user.create') }}" class="btn btn-block btn-primary mb 3">Добавить </a>
                     </div>
                 </div>
                 <div class="row">

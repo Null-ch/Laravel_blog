@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
-                        <h3 class="m-0 mr-2">{{ $user->title }}</h3>
+                        <h3 class="m-0 mr-2">{{ $user->name }}</h3>
                         <a href="{{ route('admin.user.edit', $user->id) }}" class="text-success"><i
                                 class="fas fa-pencil-alt"></i></a>
                                 <td>
@@ -45,11 +45,13 @@
                                     <tbody>
                                         <tr>
                                             <td>ID</td>
-                                            <td>{{ $user->id }}</td>
+                                            <td>Имя</td>
+                                            <td>Почта</td>
                                         </tr>
                                         <tr>
-                                            <td>Название</td>
-                                            <td>{{ $user->title }}</td>
+                                            <td>{{ $user->id }}</td>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
                                         </tr>
                                     </tbody>
                                 </table>

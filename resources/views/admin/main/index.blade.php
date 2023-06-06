@@ -19,9 +19,9 @@
                         <div class="small-box bg-info">
                             <div class="inner" style="text-align: center">
                                 <p>Пользователи</p>
-                                <h3></h3>
+                                <h3>{{ $users->count() }}</h3>
                             </div>
-                            <a href="" class="small-box-footer">Перейти к пользователям<i
+                            <a href="{{ route('admin.users.index') }}" class="small-box-footer">Перейти к пользователям<i
                                     class="fas fa-arrow-circle-right" style="margin-left: 5px"></i></a>
                         </div>
                     </div>
