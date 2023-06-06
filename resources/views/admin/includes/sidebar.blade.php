@@ -12,6 +12,14 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <li class="nav-item">
+                    <a href="{{ route('admin.users.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Пользователи
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.posts.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-clipboard"></i>
                         <p>
@@ -36,7 +44,6 @@
                     </a>
                 </li>
             </ul>
-
         </nav>
     </div>
 </aside>

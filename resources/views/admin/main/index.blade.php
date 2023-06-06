@@ -14,6 +14,28 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
+                    <!-- Карточка Пользователей -->
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-info">
+                            <div class="inner" style="text-align: center">
+                                <p>Пользователи</p>
+                                <h3></h3>
+                            </div>
+                            <a href="" class="small-box-footer">Перейти к пользователям<i
+                                    class="fas fa-arrow-circle-right" style="margin-left: 5px"></i></a>
+                        </div>
+                    </div>
+                    <!-- Карточка Постов -->
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-info">
+                            <div class="inner" style="text-align: center">
+                                <p>Посты</p>
+                                <h3>{{ $posts->count() }}</h3>
+                            </div>
+                            <a href="{{ route('admin.posts.index') }}" class="small-box-footer">Перейти к постам<i
+                                    class="fas fa-arrow-circle-right" style="margin-left: 5px"></i></a>
+                        </div>
+                    </div>
                     {{-- Карточка категорий --}}
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
@@ -36,17 +58,6 @@
                                 <h3>{{ $tag->count() }}</h3>
                             </div>
                             <a href="{{ route('admin.tag.index') }}" class="small-box-footer">Перейти к тегам<i
-                                    class="fas fa-arrow-circle-right" style="margin-left: 5px"></i></a>
-                        </div>
-                    </div>
-                    <!-- Карточка Постов -->
-                    <div class="col-lg-3 col-6">
-                        <div class="small-box bg-info">
-                            <div class="inner" style="text-align: center">
-                                <p>Посты</p>
-                                <h3>{{ $posts->count() }}</h3>
-                            </div>
-                            <a href="{{ route('admin.posts.index') }}" class="small-box-footer">Перейти к постам<i
                                     class="fas fa-arrow-circle-right" style="margin-left: 5px"></i></a>
                         </div>
                     </div>

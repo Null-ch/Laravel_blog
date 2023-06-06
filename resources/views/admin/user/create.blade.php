@@ -21,13 +21,13 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <h3>Редактирование тегов</h3>
-                        <form action="{{route('admin.tag.store')}}" method="POST" class="w-25">
+                        <h3>Добавление пользователя</h3>
+                        <form action="{{route('admin.user.store')}}" method="POST" class="w-25">
                             @csrf
                             <div class="form-group">
                                 <label>Название</label>
-                                <input type="text" class="form-control" name="title" placeholder="Название тега">
-                                @error('title')
+                                <input type="text" class="form-control" name="name" placeholder="Название категории">
+                                @error('name')
                              <div class="text-danger"> Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>

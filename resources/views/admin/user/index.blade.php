@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h3>Посты</h3>
+                        <h3>Пользователи</h3>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -22,7 +22,7 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-1 mb-3">
-                        <a href="{{ route('admin.post.create') }}" class="btn btn-block btn-primary mb 3">Добавить </a>
+                        <a href="{{ route('admin.category.create') }}" class="btn btn-block btn-primary mb 3">Добавить </a>
                     </div>
                 </div>
                 <div class="row">
@@ -33,24 +33,23 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Название поста</th>
+                                            <th>Имя пользователя</th>
                                             <th>Дата изменения</th>
                                             <th colspan="3" class="text-center">Действие</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($posts as $post)
+                                        @foreach ($users as $user)
                                             <tr>
-                                                <td>{{ $post->id }}</td>
-                                                <td>{{ $post->title }}</td>
-                                                <td>{{ $post->updated_at }}</td>
-                                                <td class="text-center"><a
-                                                        href="{{ route('admin.post.show', $post->id) }}"><i
+                                                <td>{{ $user->id }}</td>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user->updated_at }}</td>
+                                                <td class="text-center"><a href="{{ route('admin.user.show', $user->id) }}"><i
                                                             class="far fa-eye"></i></a></td>
-                                                <td class="text-center"><a href="{{ route('admin.post.edit', $post->id) }}"
+                                                <td class="text-center"><a href="{{ route('admin.user.edit', $user->id) }}"
                                                         class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
                                                 <td class="text-center">
-                                                    <form action="{{ route('admin.post.delete', $post->id) }} "
+                                                    <form action="{{ route('admin.user.delete', $user->id) }} "
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')
