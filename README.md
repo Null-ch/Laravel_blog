@@ -26,7 +26,7 @@
 
 Склонируйте проект в директорию с сервером:
 
-`git clone https://git@github.com:Null-ch/Laravel_blog.git`
+`git clone git@github.com:Null-ch/Laravel_blog.git`
 
 Затем, открыв из папки проекта консоль, введите команду для установки пакетов ларавель:
 
