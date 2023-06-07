@@ -47,11 +47,13 @@
                                             <td>ID</td>
                                             <td>Имя</td>
                                             <td>Почта</td>
+                                            <td>Роль</td>
                                         </tr>
                                         <tr>
                                             <td>{{ $user->id }}</td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
+                                            <td>{{ $role }}</td>
                                         </tr>
                                     </tbody>
                                 </table>

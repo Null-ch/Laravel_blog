@@ -35,6 +35,7 @@
                                             <th>ID</th>
                                             <th>Имя пользователя</th>
                                             <th>Дата изменения</th>
+                                            <th>Роль</th>
                                             <th colspan="3" class="text-center">Действие</th>
                                         </tr>
                                     </thead>
