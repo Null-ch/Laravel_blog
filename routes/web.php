@@ -39,7 +39,7 @@ use App\Http\Controllers\Admin\User\IndexController as UserIndexController;
 Route::group(['App\Http\Controllers\Main'], function () {
     Route::get('/', IndexController::class);
 });
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
         Route::get('/', IndexControllerAdmin::class)->name('admin.index');
 });
 Route::group(['prefix' => 'admin/categories'], function () {
@@ -81,5 +81,9 @@ Route::group(['prefix' => 'admin/user'], function () {
     Route::patch('/{user}', UserUpdateController::class)->name('admin.user.update');
     Route::delete('/{user}', UserDeleteController::class)->name('admin.user.delete');
 });
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
