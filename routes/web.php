@@ -11,34 +11,36 @@ use App\Http\Controllers\Admin\Category\StoreController;
 use App\Http\Controllers\Admin\Category\CreateController;
 use App\Http\Controllers\Admin\Category\DeleteController;
 use App\Http\Controllers\Admin\Category\UpdateController;
+
 use App\Http\Controllers\Admin\Tag\EditController as TagEditController;
-
-use App\Http\Controllers\Admin\Tag\ShowController as TagShowController;
-use App\Http\Controllers\Admin\Post\EditController as PostEditController;
-use App\Http\Controllers\Admin\Post\ShowController as PostShowController;
-use App\Http\Controllers\Admin\Tag\IndexController as TagIndexController;
-use App\Http\Controllers\Admin\Tag\StoreController as TagStoreController;
-use App\Http\Controllers\Admin\User\EditController as UserEditController;
-use App\Http\Controllers\Admin\User\ShowController as UserShowController;
-
-use App\Http\Controllers\Admin\Post\IndexController as PostIndexController;
-use App\Http\Controllers\Admin\Post\StoreController as PostStoreController;
 use App\Http\Controllers\Admin\Tag\CreateController as TagCreateController;
 use App\Http\Controllers\Admin\Tag\DeleteController as TagDeleteController;
 use App\Http\Controllers\Admin\Tag\UpdateController as TagUpdateController;
-use App\Http\Controllers\Admin\User\IndexController as UserIndexController;
-use App\Http\Controllers\Admin\User\StoreController as UserStoreController;
+use App\Http\Controllers\Admin\Tag\ShowController as TagShowController;
+use App\Http\Controllers\Admin\Tag\IndexController as TagIndexController;
+use App\Http\Controllers\Admin\Tag\StoreController as TagStoreController;
 
-use App\Http\Controllers\Admin\Main\IndexController as IndexControllerAdmin;
 use App\Http\Controllers\Admin\Post\CreateController as PostCreateController;
 use App\Http\Controllers\Admin\Post\DeleteController as PostDeleteController;
 use App\Http\Controllers\Admin\Post\UpdateController as PostUpdateController;
+use App\Http\Controllers\Admin\Post\EditController as PostEditController;
+use App\Http\Controllers\Admin\Post\ShowController as PostShowController;
+use App\Http\Controllers\Admin\Post\IndexController as PostIndexController;
+use App\Http\Controllers\Admin\Post\StoreController as PostStoreController;
+
+use App\Http\Controllers\Admin\User\EditController as UserEditController;
+use App\Http\Controllers\Admin\User\ShowController as UserShowController;
+use App\Http\Controllers\Admin\User\IndexController as UserIndexController;
+use App\Http\Controllers\Admin\User\StoreController as UserStoreController;
 use App\Http\Controllers\Admin\User\CreateController as UserCreateController;
 use App\Http\Controllers\Admin\User\DeleteController as UserDeleteController;
 use App\Http\Controllers\Admin\User\UpdateController as UserUpdateController;
 
+
+use App\Http\Controllers\Admin\Main\IndexController as IndexControllerAdmin;
 use App\Http\Controllers\Personal\Main\IndexController as PersonalIndexController;
 use App\Http\Controllers\Personal\Liked\IndexController as PersonaLikedlIndexController;
+use App\Http\Controllers\Personal\Liked\DeleteController as PersonaLikedDeletelController;
 use App\Http\Controllers\Personal\Comment\IndexController as PersonaCommentlIndexController;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -104,6 +106,7 @@ Route::group(['prefix' => 'personal', 'middleware' => ['auth', 'verified']], fun
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::group(['prefix' => 'personal/liked'], function () {
         Route::get('/', PersonaLikedlIndexController::class)->name('personal.liked.index');
+        Route::delete('/{post}', PersonaLikedDeletelController::class)->name('personal.liked.delete');
     });
 
     Route::group(['prefix' => 'personal/comment'], function () {
