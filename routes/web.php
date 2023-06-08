@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Main\IndexController;
 
+use App\Http\Controllers\Admin\Category\IndexController as IndexControllerCategory;
 use App\Http\Controllers\Admin\Category\EditController;
 use App\Http\Controllers\Admin\Category\ShowController;
 use App\Http\Controllers\Admin\Category\StoreController;
@@ -35,7 +36,17 @@ use App\Http\Controllers\Admin\Post\UpdateController as PostUpdateController;
 use App\Http\Controllers\Admin\User\CreateController as UserCreateController;
 use App\Http\Controllers\Admin\User\DeleteController as UserDeleteController;
 use App\Http\Controllers\Admin\User\UpdateController as UserUpdateController;
-use App\Http\Controllers\Admin\Category\IndexController as IndexControllerCategory;
+
+use App\Http\Controllers\Personal\Main\IndexController as PersonalIndexController;
+use App\Http\Controllers\Personal\Liked\IndexController as PersonaLikedlIndexController;
+use App\Http\Controllers\Personal\Comment\IndexController as PersonaCommentlIndexController;
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Auth::routes(['verify' => true]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['App\Http\Controllers\Main', 'middleware' => ['auth']], function () {
     Route::get('/', IndexController::class);
@@ -43,6 +54,7 @@ Route::group(['App\Http\Controllers\Main', 'middleware' => ['auth']], function (
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']], function () {
     Route::get('/', IndexControllerAdmin::class)->name('admin.index');
 });
+
 Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     Route::group(['prefix' => 'admin/categories'], function () {
         Route::get('/', IndexControllerCategory::class)->name('admin.category.index');
@@ -85,9 +97,16 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     });
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::group(['prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
+    Route::get('/', PersonalIndexController::class)->name('personal.index');
+});
 
-Auth::routes(['verify' => true]);
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::group(['prefix' => 'personal/liked'], function () {
+        Route::get('/', PersonaLikedlIndexController::class)->name('personal.liked.index');
+    });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::group(['prefix' => 'personal/comment'], function () {
+        Route::get('/', PersonaCommentlIndexController::class)->name('personal.comment.index');
+    });
+});

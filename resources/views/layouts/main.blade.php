@@ -42,6 +42,10 @@
                             </li>
                         @endif
                         @if (auth())
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('personal.index') }}">Личный кабинет <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/logout') }}">Выйти <span
                                         class="sr-only">(current)</span></a>
