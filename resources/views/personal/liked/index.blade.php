@@ -33,7 +33,7 @@
                                                 <td>{{ $post->title }}</td>
                                                 <td>{{ $post->updated_at }}</td>
                                                 <td class="text-center"><a
-                                                        href="{{ route('admin.post.show', $post->id) }}"><i
+                                                        href="{{ route('personal.liked.show', $post->id) }}"><i
                                                             class="far fa-eye"></i></a></td>
                                                 <td class="text-center">
                                                     <form action="{{ route('personal.liked.delete', $post->id) }} "

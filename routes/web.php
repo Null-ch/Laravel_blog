@@ -40,8 +40,13 @@ use App\Http\Controllers\Admin\User\UpdateController as UserUpdateController;
 use App\Http\Controllers\Admin\Main\IndexController as IndexControllerAdmin;
 use App\Http\Controllers\Personal\Main\IndexController as PersonalIndexController;
 use App\Http\Controllers\Personal\Liked\IndexController as PersonaLikedlIndexController;
+use App\Http\Controllers\Personal\Liked\ShowController as PersonaLikedlShowController;
 use App\Http\Controllers\Personal\Liked\DeleteController as PersonaLikedDeletelController;
+
 use App\Http\Controllers\Personal\Comment\IndexController as PersonaCommentlIndexController;
+use App\Http\Controllers\Personal\Comment\UpdateController as PersonaCommentlUpdateController;
+use App\Http\Controllers\Personal\Comment\EditController as PersonaCommentlEditController;
+use App\Http\Controllers\Personal\Comment\DeleteController as PersonaCommentlDeleteController;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -106,10 +111,14 @@ Route::group(['prefix' => 'personal', 'middleware' => ['auth', 'verified']], fun
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::group(['prefix' => 'personal/liked'], function () {
         Route::get('/', PersonaLikedlIndexController::class)->name('personal.liked.index');
+        Route::get('/{post}', PersonaLikedlShowController::class)->name('personal.liked.show');
         Route::delete('/{post}', PersonaLikedDeletelController::class)->name('personal.liked.delete');
     });
 
     Route::group(['prefix' => 'personal/comment'], function () {
         Route::get('/', PersonaCommentlIndexController::class)->name('personal.comment.index');
+        Route::get('/{comment}/edit', PersonaCommentlEditController::class)->name('personal.comment.edit');
+        Route::patch('/{comment}', PersonaCommentlUpdateController::class)->name('personal.comment.update');
+        Route::delete('/{comment}', PersonaCommentlDeleteController::class)->name('personal.comment.delete');
     });
 });
