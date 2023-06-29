@@ -1,4 +1,4 @@
-![chrome_IeBU4G9Gaf](https://github.com/Null-ch/Laravel_blog/assets/65172872/3bc103e7-2b2c-4d8c-81fb-a964c7d15f84)<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 # ОПИСАНИЕ ПРОЕКТА
 
