@@ -9,22 +9,15 @@
                         <h3 class="m-0 mr-2">{{ $post->title }}</h3>
                         <a href="{{ route('admin.post.edit', $post->id) }}" class="text-success"><i
                                 class="fas fa-pencil-alt"></i></a>
-                                <td>
-                                    <form action="{{ route('admin.post.delete', $post->id) }} "
-                                        method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="border-0 bg-white">
-                                            <i class="fas fa-trash text-danger" role="button"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            {{-- <li class="breadcrumb-item active">Dashboard v1</li> --}}
-                        </ol>
+                        <td>
+                            <form action="{{ route('admin.post.delete', $post->id) }} " method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="border-0 bg-white">
+                                    <i class="fas fa-trash text-danger" role="button"></i>
+                                </button>
+                            </form>
+                        </td>
                     </div>
                 </div>
             </div>

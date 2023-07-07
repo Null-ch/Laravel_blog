@@ -34,7 +34,7 @@
                                         <img src="{{ url('storage/' . $randomPost->preview_image) }}" alt="preview_image">
                                     </div>
                                     <p class="blog-post-category">{{ $randomPost->category }}</p>
-                                    <a href="{{ route('post.show', $post->id) }}" class="blog-post-permalink">
+                                    <a href="#!" class="blog-post-permalink">
                                         <h6 class="blog-post-title">{{ $randomPost->title }}</h6>
                                     </a>
                                 </div>
@@ -48,7 +48,7 @@
                         <ul class="post-list">
                             @foreach ($likedPosts as $likedPost)
                                 <li class="post">
-                                    <a href="{{ route('post.show', $post->id) }}" class="post-permalink media">
+                                    <a href="#!" class="post-permalink media">
                                         <img src="{{ url('storage/' . $likedPost->preview_image) }}" alt="preview_image">
                                         <div class="media-body">
                                             <h6 class="post-title">{{ $likedPost->title }}</h6>
@@ -62,7 +62,7 @@
                         <h5 class="widget-title">Категории</h5>
                         <div class="media-body">
                             @foreach ($categoies as $category)
-                                <a href="{{ route('post.show', $post->id) }}" class="blog-post-permalink">
+                                <a href="#" class="blog-post-permalink">
                                     <h6 class="post-title">{{ $category->title }}</h6>
                                 </a>
                             @endforeach

@@ -48,6 +48,9 @@ use App\Http\Controllers\Personal\Comment\UpdateController as PersonaCommentlUpd
 use App\Http\Controllers\Personal\Comment\EditController as PersonaCommentlEditController;
 use App\Http\Controllers\Personal\Comment\DeleteController as PersonaCommentlDeleteController;
 
+use App\Http\Controllers\Post\IndexController as OnePostIndexController;
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
@@ -58,6 +61,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['App\Http\Controllers\Main', 'middleware' => ['auth']], function () {
     Route::get('/', IndexController::class);
 });
+
+Route::group(['prefix' => 'posts',], function () {
+    Route::get('/', App\Http\Controllers\Post\IndexController::class)->name('post.index');
+    Route::get('/{post}', App\Http\Controllers\Post\ShowController::class)->name('post.show');
+    Route::post('/', App\Http\Controllers\Post\StoreController::class)->name('post.store');
+});
+
+
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']], function () {
     Route::get('/', IndexControllerAdmin::class)->name('admin.index');
 });
@@ -92,7 +103,7 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
         Route::patch('/{post}', PostUpdateController::class)->name('admin.post.update');
         Route::delete('/{post}', PostDeleteController::class)->name('admin.post.delete');
     });
-    
+
     Route::group(['prefix' => 'admin/user'], function () {
         Route::get('/', UserIndexController::class)->name('admin.users.index');
         Route::get('/create', UserCreateController::class)->name('admin.user.create');
