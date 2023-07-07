@@ -37,7 +37,7 @@
 
 Затем, открыв из папки проекта консоль, введите команду для установки пакетов ларавель:
 
-`composer install`
+`composer update`
 
 Создайте базу данных на сервере и заполните поля файла .env, находящийся в папке проекта по примеру:
 
@@ -70,7 +70,10 @@
 <details> 
 <summary> Обзор текущего наполнения </summary>
 <h4 align="center">Основная страница</h4>
-<img src="https://github.com/Null-ch/Laravel_blog/assets/65172872/f41bd9a7-be92-4df6-b501-fe4fbfe259ce">
+<img src="https://github.com/Null-ch/Laravel_blog/assets/65172872/ed92e630-fe23-40e8-861e-61747684c2cd">
+<h4 align="center">Админ панель ЛК (доступ в зависимости от ролей)</h4>
+<img src="https://github.com/Null-ch/Laravel_blog/assets/65172872/e5eb8a87-8882-4abf-b5bf-c2432ba208c0">
+
 Демонстрация рабочего CRUD (теги)
 <img src="https://github.com/Null-ch/Laravel_blog/assets/65172872/5a35f014-8fd4-4f0f-b128-25c01d891476">
 </details> 
