@@ -74,6 +74,6 @@
 <h4 align="center">Админ панель ЛК (доступ в зависимости от ролей)</h4>
 <img src="https://github.com/Null-ch/Laravel_blog/assets/65172872/e5eb8a87-8882-4abf-b5bf-c2432ba208c0">
 
-Демонстрация рабочего CRUD (теги)
-<img src="https://github.com/Null-ch/Laravel_blog/assets/65172872/5a35f014-8fd4-4f0f-b128-25c01d891476">
+Демонстрация рабочего CRUD (на примере постов)
+<img src="https://github.com/Null-ch/Laravel_blog/assets/65172872/38df26c9-4142-4b00-a515-5f97aa2cdda5">
 </details> 
